@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  # mongodb:
+  #   image: mongo
+  #   restart: always
+  #   container_name: nlwheat-mongodb
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: "nlwheat"
+  #     MONGO_INITDB_ROOT_PASSWORD: "%bj4njkW"
+  #   ports:
+  #     - 27017:27017
+  #   volumes:
+  #     - ~/.docker/NLWHeat/Mongo:/data/db
+
+  postgresql:
+    image: postgres
+    restart: always
+    container_name: nlwheat-postgres
+    environment:
+      POSTGRES_USER: "nlwheat"
+      POSTGRES_PASSWORD: "%bj4njkW"
+      POSTGRES_DB: "nlwheat"
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/.docker/NLWHeat/Postgres:/var/lib/postgresql/data
